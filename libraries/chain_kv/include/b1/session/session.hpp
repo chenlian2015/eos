@@ -818,7 +818,8 @@ typename session<Parent>::iterator session<Parent>::end() const {
 
 template <typename Parent>
 typename session<Parent>::iterator session<Parent>::lower_bound(const shared_bytes& key) const {
-   auto& it_cache = const_cast<cache_type&>(m_cache);
+   auto& it_cache = const_cast<cache_type&>(
+     m_cache);
    auto  version  = uint64_t{ 0 };
    auto  end      = std::end(it_cache);
    auto  it       = it_cache.lower_bound(key);
